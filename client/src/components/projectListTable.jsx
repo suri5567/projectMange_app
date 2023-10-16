@@ -15,7 +15,7 @@ const ProjectTable = ({ list, setEditingWorkItem }) => {
 
 	  const handleProjectEdit = async(text, id) => {
 	    try{
-	      let res = await axios.patch(`http://localhost:5500/projectDetails/editProject/${id}`, {status: text});
+	      let res = await axios.patch(`https://mern-app-pfg6.onrender.com/projectDetails/editProject/${id}`, {status: text});
 	      setEditingWorkItem(Math.random(2))
 	    }catch(err){
 	      console.log(err)

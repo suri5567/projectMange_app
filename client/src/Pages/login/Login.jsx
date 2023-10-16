@@ -20,7 +20,7 @@ function Login() {
 		email, password
 	}
 	try{
-		const res = await axios.post(`http://localhost:5500/userAuth/login`, userAuthData);
+		const res = await axios.post(`https://mern-app-pfg6.onrender.com/userAuth/login`, userAuthData);
 		console.log("re", res)
 		localStorage.setItem("userAuth", JSON.stringify(userAuthData));
 		if(res.status==201){
