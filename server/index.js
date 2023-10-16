@@ -13,8 +13,8 @@ const app = express();
 
 
 // port
-const PORT  = 5500 || process.env.PORT1;
-const BASE_URL = process.env.BASE_URL
+const PORT  = 5500;
+
 
 // middlewares
 app.use(cors());
