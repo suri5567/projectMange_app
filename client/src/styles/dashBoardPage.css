@@ -1,0 +1,74 @@
+.dashboard{
+	display: flex;
+	width: 100%;
+	min-height: 50vh;
+	align-items: center;
+  }
+  
+  .dashboard .dashboard-main {
+	width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('../assets/login-bg-1.svg');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-color: #F2F4F7;
+    background-position-y: -346px;
+  }
+  
+  .dashboard-main .statusInfo{
+	padding: 0px 25px;
+  }
+  
+  .statusInfo .cardInfo{
+	border-left: 5px solid #0DC8E8;
+	width: 100%;
+  }
+  
+  .statusInfo .cardInfo p{
+	font-weight: 500;
+	color: gray;
+  }
+  
+  .statusInfo .cardInfo h2{
+	margin:-15px 0px -10px 0px;
+	padding: 0; 
+	font-size: 35px;
+  }
+  
+  .dashboard-main .chartInfo{
+	padding: 0px 25px;
+  }
+  
+  .chartInfo .chart-div{
+	width: 600px;
+  }
+  
+  @media (max-width: 768px) {
+	.dashboard{
+	  flex-direction: column-reverse;
+	  min-height: 0;
+	}
+  
+	.dashboard .dashboard-main {
+		background-image: url('../assets/login-bg-1.svg');
+		background-size: auto 70px; 
+		background-repeat: no-repeat;
+		background-color: #F2F4F7;
+	}
+  
+	.dashboard-main .statusInfo{
+	  overflow-x: scroll;
+	  scroll-behavior: smooth;
+	  margin-top: 20px;
+	}
+  
+	.chartInfo .chart-div{
+	  width: 95%;
+	  margin: auto;
+	}
+  
+	.statusInfo .cardInfo p{
+	  width: 120px
+	}
+  }

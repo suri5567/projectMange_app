@@ -1,0 +1,62 @@
+#container1 {
+	padding: 25px;
+	padding-right: 25px;
+}
+
+.table {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.table-primary {
+	font-size: 14px;
+	font-weight: 500px;
+}
+
+.table tbody tr {
+	font-size: 14px;
+}
+
+.table tbody tr td p {
+	font-size: 17px;
+}
+
+#bold {
+	font-weight: bold;
+}
+
+#btn1 {
+	background-color: rgb(2, 91, 170);
+	color: white;
+	padding: 3px 18px;
+	border-radius: 20px;
+	font-weight: 500;
+	border: 1px solid #025BAA
+}
+
+#btn1 {
+	background-color: rgb(2, 91, 170);
+	color: white;
+	padding: 3px 18px;
+	border-radius: 20px;
+	font-weight: 500;
+	border: 1px solid #025BAA
+}
+
+#btn2 {
+	background-color: white;
+	color: "#025BAA";
+	padding: 3px 18px;
+	border-radius: 20px;
+	font-weight: 500;
+	border: 1px solid #025BAA
+}
+
+#btn3 {
+	background-color: white;
+	color: #025BAA;
+	padding: 3px 18px;
+	border-radius: 20px;
+	font-weight: 500;
+	border: 1px solid #025BAA;
+}

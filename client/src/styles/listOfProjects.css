@@ -1,0 +1,70 @@
+.dashboard .dashboard-main .search{
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-color: black;
+	border-radius: 0;
+	width: 300px;
+  }
+ 
+
+  .dashboard-main .tableContainer1{
+	padding: 0px 25px;
+	margin-top: 65px;
+  }
+
+  .tableContainer2{
+	margin-top: -80px;
+  }
+  
+  .tableContainer1 .tableContainer2{
+	box-shadow: rgba(105, 105, 139, 0.2) 0px 7px 29px 0px;
+	background-color: white;
+	border-radius: 10px;
+  }
+  
+  .dashboard-main .search1{
+	padding: 20px;
+  }
+  .dashboard-main .sorting{
+	padding: 10px;
+  }
+  .dashboard-main .sorting p{
+	color: #BBC0C6;
+	margin: 0; 
+	padding: 0; 
+	font-size: 15px;
+  }
+  
+  .dashboard-main .sorting select{
+	border: none;
+	font-weight: 500;
+	font-size: 15px;
+  }
+  
+  .dashboard-main .handlePage{
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+  }
+  
+  @media (max-width: 768px) {
+	.dashboard .dashboard-main .search{
+	  width: 80%;
+	  background-color: #F2F4F7;
+	}
+  
+	.tableContainer1 .tableContainer2{
+	  box-shadow: none;
+	  background-color: #F2F4F7;
+	  border-radius: 0px;
+	}
+  
+	.dashboard-main .sorting p{ 
+	  font-size: 13px;
+	}
+	.dashboard-main .sorting select{
+	  background-color: #F2F4F7;
+	  font-size: 13px;
+	}
+  }

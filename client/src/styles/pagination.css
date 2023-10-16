@@ -1,0 +1,28 @@
+.pageContainer {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.btn1 {
+	border: none;
+}
+
+.btn2 {
+	border: none;
+}
+
+.btn3 {
+	margin: 0;
+	font-size: 15px;
+	border: none;
+	border-radius: 50%;
+	padding: 7px 14px;
+}
+
+.btn4 {
+	border: none;
+}
+
+.btn5 {
+	border: none;
+}
