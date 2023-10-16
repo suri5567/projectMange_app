@@ -7,7 +7,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
+<<<<<<< HEAD
 	"build":"npm i"
+=======
+    "build":"npm i"
+>>>>>>> 5a0eaa24fddadba81a67614862b0691c06465fe8
   },
   "author": "",
   "license": "ISC",
