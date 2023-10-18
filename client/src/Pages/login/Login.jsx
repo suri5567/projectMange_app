@@ -11,33 +11,32 @@ function Login() {
 	const [passwordVisibility, setPasswordVisibility] = useState(false);
 	const [formError, setFormError] = useState({ email: '', password: '' });
 	const { login, logout } = useContext(ContextApi);
-	
-
+	const [error, setError] = useState({msg:""});
 
 
 	async function handleLogin({ email, password }) {
 		try {
-			const response = await axios.post('http://localhost:8080/userAuth/login',
-				{
-					email,
-					password
-				}, {
+			const response = await axios.post('http://localhost:8080/userAuth/login', {
+				email,
+				password
+			}, {
 				withCredentials: true
 			});
 
-			if (response.status === 201) {
+			console.log("why", response.msg);
+	
+			if (response.status == 201) {
 				console.log('Login Successful');
 				login();
-			} else {
-				logout();
-			}
-
-		}
-		catch (error) {
-			console.error('Login Error:', error);
+			} 
+		} catch (error) {
+             
+			setError({msg:"Invalid Email or Password!!!"});
+			logout();
+			
 		}
 	}
-
+	
 	const handleSubmittedForm = (e) => {
 		e.preventDefault();
 
@@ -80,8 +79,6 @@ function Login() {
 		setPasswordVisibility(!passwordVisibility);
 	};
 
-
-
 	return (
 		<div className="container d-flex align-items-center justify-content-center">
 			<div className="content">
@@ -91,6 +88,7 @@ function Login() {
 				<h1>Online Project Management</h1>
 				<div className="titleBox">
 					<p className="fs-5 mt-4">Login to get started</p>
+					{error?.msg && <p style={{ color: 'red', fontSize: 15 }}>{error.msg}</p>}
 					<form className="p-4 fs-6 form1" onSubmit={(e) => handleSubmittedForm(e)}>
 						<div className="formDec">
 							<label>Email</label>
