@@ -1,3 +1,0 @@
-// make  directories
-// make routes for diff pages
-// checking of routes

@@ -10,7 +10,7 @@ const DashBoard = () => {
 
 	  const getCount = async() => {
 	    try{
-	      let res = await axios.get(`https://project-manage-mern-app.onrender.com/counterData/getCounterInfo`);
+	      let res = await axios.get(`http://localhost:8080/counterData/getCounterInfo`);
 	      setCounter(res.data);
 	    }catch(err){
 	      console.log(err)

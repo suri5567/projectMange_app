@@ -22,7 +22,7 @@ function App() {
 
 
 	const getAuthData = async () => {
-		const response = await axios.get('https://project-manage-mern-app.onrender.com/userAuth/check-auth', {
+		const response = await axios.get('http://localhost:8080/userAuth/check-auth', {
 			withCredentials: true
 		  })
 		console.log("response", response);

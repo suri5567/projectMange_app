@@ -8,7 +8,7 @@ const Charts = () => {
 
   const getDepartmentWiseData = async() => {
     try{
-      let res = await axios.get(`https://project-manage-mern-app.onrender.com/projectDetails/departmentInfo`);
+      let res = await axios.get(`http://localhost:8080/projectDetails/departmentInfo`);
       setDepartmentInfo(res.data);
     }catch(err){
       console.log(err)

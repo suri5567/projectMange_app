@@ -17,7 +17,7 @@ export const handleLogin = async (req, res) => {
 		const userData = await AuthModel.findOne({ email: normalizedEmail });
 
 		if (!userData) {
-			return res.status(404).json({ msg: "User not found!!!" });
+			return res.status(403).json({ msg: "User not found!!!" });
 		}
 
 
