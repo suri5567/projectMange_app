@@ -9,7 +9,12 @@ app.use(cookieParser());
 
 export const handleLogin = async (req, res) => {
     const { email, password } = req.body;
+	const userCookie = req.cookies?.uid;
     try {
+		if(userCookie){
+			res.clearCookie(userCookie)
+		}
+
         if (!email || !password) {
             return res.status(400).json({ msg: "Bad Request: Email and password are required." });
         }
@@ -24,16 +29,16 @@ export const handleLogin = async (req, res) => {
         if (userData.password !== password) {
             return res.status(403).json({ msg: "Forbidden: Invalid password." });
         }
-
-        const token = setUserCookie(userData);
-        res.cookie('uid', token, {
+			const token = setUserCookie(userData);
+             res.cookie('uid', token, {
             maxAge: 7 * 24 * 60 * 60 * 1000,
             secure: false
         });
 
         res.status(201).json({ msg: 'Success: Login successful.' });
+		
     } catch (error) {
-        console.error(error);
+        console.log(error);
         res.status(500).json({ msg: "Internal Server Error" });
     }
 };
