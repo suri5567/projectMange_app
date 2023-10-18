@@ -16,7 +16,7 @@ function Login() {
 
 async function handleLogin({email, password}) {
 	try {
-	  const response = await axios.post('http://localhost:5500/userAuth/login', {
+	  const response = await axios.post('https://project-manage-mern-app.onrender.com/userAuth/login', {
 		email,
 		password
 	  },{

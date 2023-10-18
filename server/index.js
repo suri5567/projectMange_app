@@ -11,10 +11,10 @@ import getCounterValue from './routes/counterInfo.js'
 // inislization
 dotenv.config();
 const app = express();
-const PORT = 5500;
+const PORT = process.env.PORT1 || 5500;
 app.use(cookieParser()); 
 app.use(cors({
-	origin: ['http://localhost:5500', 'http://localhost:5173'],
+	origin: ['http://localhost:5500', 'http://localhost:5173', "http://localhost:8080"],
 	methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 	credentials: true,
 }));

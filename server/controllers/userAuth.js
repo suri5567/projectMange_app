@@ -25,7 +25,10 @@ export const handleLogin = async (req, res) => {
 			return res.status(403).json({ msg: "Invalid User!!!" });
 		}
 		const token = setUserCookie(userData);
-		res.cookie('uid', token, { maxAge: 7 * 24 * 60 * 60 * 1000 }, { httpOnly: true });
+		res.cookie('uid', token, {
+			maxAge: 7 * 24 * 60 * 60 * 1000,
+			secure: false 
+		  });
 		res.status(201).json({ msg: 'Login Successfully Done!!!' });
 	} catch (error) {
 		console.error(error);

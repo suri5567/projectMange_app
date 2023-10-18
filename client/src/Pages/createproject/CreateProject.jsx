@@ -39,7 +39,7 @@ const ProjectForm = () => {
 
 	const registerProject = async (data) => {
 		try {
-			let res = await axios.post(`http://localhost:5500/projectDetails/createProject`, data);
+			let res = await axios.post(`https://project-manage-mern-app.onrender.com/projectDetails/createProject`, data);
 				alert("Project details added successfully!!!");
 		} catch (error) {
 			console.log(error.message)
