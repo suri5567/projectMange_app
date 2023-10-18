@@ -18,9 +18,10 @@ const ProjectForm = () => {
 
 	const updateFormData = (e) => {
 		const { name, value } = e.target;
+		setErrors({ ...errors, [name]: '' });
 		setFormData({ ...formData, [name]: value });
-		setErrors({ ...errors, [name]: "" });
-	}
+	  }
+	  
 
 	const validateForm = (data) => {
 		let tempErrors = { ...errors };
@@ -38,10 +39,10 @@ const ProjectForm = () => {
 
 	const registerProject = async (data) => {
 		try {
-			let res = await axios.post(`https://mern-app-pfg6.onrender.com/projectDetails/createProject`, data);
+			let res = await axios.post(`http://localhost:5500/projectDetails/createProject`, data);
 				alert("Project details added successfully!!!");
-		} catch (err) {
-			alert("Internal server error!!!");
+		} catch (error) {
+			console.log(error.message)
 		}
 	}
 
@@ -73,6 +74,22 @@ const ProjectForm = () => {
 		const formattedMonth = month < 10 ? `0${month}` : month;
 		return `${year}-${formattedMonth}-${formattedDay}`;
 	}
+
+	const handleStartDateBlur = (e) => {
+		const startDate = e.target.value;
+		if (startDate) {
+		  setErrors({ ...errors, start: '' });
+		}
+	  }
+	  
+	  const handleEndDateBlur = (e) => {
+		const endDate = e.target.value;
+		if (endDate) {
+		  setErrors({ ...errors, end: '' });
+		}
+	  }
+	  
+	  
 
 	return (
 		<div className='dashboard d-flex '>
@@ -153,13 +170,13 @@ const ProjectForm = () => {
 
 								<div className='single-form-option'>
 									<p className='form-option-title' style={{ color: errors.start ? "red" : "" }}>Project Start Date</p>
-									<input type='date' onChange={updateFormData} name='startDate' min={getCurrentDate()} value={formData.startDate} />
+									<input type='date' onChange={updateFormData} name='startDate' min={getCurrentDate()} value={formData.startDate} onBlur={handleStartDateBlur} />
 										{errors.start && <p style={{ color: "red", fontSize: "15px" }}>{errors.start}</p>}
 								</div>
 
 								<div className='single-form-option'>
 									<p className='form-option-title' style={{ color: errors.end ? "red" : "" }}>Project End Date</p>
-									<input type='date' onChange={updateFormData} min={getMinEndDate(formData.startDate)} name='endDate' value={formData.endDate} />
+									<input type='date' onChange={updateFormData} min={getMinEndDate(formData.startDate)} name='endDate' value={formData.endDate}  onBlur={handleEndDateBlur}/>
 									{errors.end && <p style={{ color: "red", fontSize: "15px" }}>{errors.end}</p>}
 								</div>
 
@@ -171,7 +188,7 @@ const ProjectForm = () => {
 										<option value="Mumbai">Haryana</option>
 										<option value="Delhi">Delhi</option>
 										<option value="U.P">U.P</option>
-										<option value="Chandigarh">Chandigard</option>
+										<option value="Chandigarh">Chandigarh</option>
 									</select>
 								</div>
 							</div>

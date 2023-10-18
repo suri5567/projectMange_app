@@ -17,18 +17,15 @@
 } 
 
 .content {
-	margin-top: -138px;
+	margin-top: -200px;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-
 }
-
 
 .container .image img {
 	width: 85px;
 }
-
 
 .container h1 {
 	color: white;
@@ -42,11 +39,11 @@
 	top: 170px;
 	width: 410px;
 	background-color: white;
-	height: auto;
+	height: 492px;
 	box-shadow: 2px 10px 3px 1px grey;
 	padding: 20px;
 	border-radius: 10px;
-	margin-top: 50px;
+	margin-top: 17px;
 }
 
 .titleBox>p {
@@ -101,6 +98,26 @@
 .loginBtnInfo:hover {
 	background-color: #024f9b;
 }
+
+/* Add this CSS to your styles.css or equivalent stylesheet */
+.password-input-group {
+	display: flex;
+	align-items: center;
+  }
+  
+  .password-input-group input {
+	flex: 1;
+	padding-right: 30px; /* Adjust the value to control the spacing between the input and icon */
+  }
+  
+  .password-toggle {
+	cursor: pointer;
+	position: absolute;
+	right: 10px; /* Adjust the value to control the horizontal positioning */
+	top: 50%; /* Adjust the value to vertically center the icon */
+	transform: translateY(-50%); /* Vertically center the icon */
+  }
+  
 
 @media (max-width: 581px) {
 	.container{

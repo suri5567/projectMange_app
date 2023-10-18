@@ -28,7 +28,7 @@ const ProjectList = () => {
 
 	const loadProjects = async() => {
 		try{
-		  let res = await axios.get(`https://mern-app-pfg6.onrender.com/projectDetails/getAllData?page=${currentPage}&limit=10&sort=${sortingOption}&searchTerm=${searchTerm}`);
+		  let res = await axios.get(`http://localhost:5500/projectDetails/getAllData?page=${currentPage}&limit=10&sort=${sortingOption}&searchTerm=${searchTerm}`);
 		  setList(res?.data);
 		}catch(err){
 		  console.log(err)

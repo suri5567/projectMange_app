@@ -1,27 +1,24 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-<<<<<<< HEAD
-	"build":"npm i"
-=======
-    "build":"npm i"
->>>>>>> 5a0eaa24fddadba81a67614862b0691c06465fe8
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "mongodb": "^6.1.0",
-    "mongoose": "^7.6.2",
-    "nodemon": "^3.0.1"
-  }
+	"name": "server",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node index.js",
+		"build": "npm i"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"cookie-parser": "^1.4.6",
+		"cors": "^2.8.5",
+		"dotenv": "^16.3.1",
+		"express": "^4.18.2",
+		"jsonwebtoken": "^9.0.2",
+		"mongodb": "^6.1.0",
+		"mongoose": "^7.6.2",
+		"nodemon": "^3.0.1"
+	}
 }
