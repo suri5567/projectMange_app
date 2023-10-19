@@ -11,16 +11,11 @@ import getCounterValue from './routes/counterInfo.js'
 // inislization
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT1 || 5500;
+
 app.use(cors());
 app.use(cookieParser()); 
-
-
-
-  
+const PORT = process.env.PORT1 || 5500;
 app.use(express.json())
-app.use(express.urlencoded({ extended: true }));
-
 
 // databse connection
 databaseConnection(process.env.MONGO_STRING).then(() => {

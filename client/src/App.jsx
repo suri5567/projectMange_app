@@ -1,4 +1,4 @@
-import config from './config';
+// import config from './config';
 import { useState, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
@@ -19,7 +19,7 @@ function App() {
 		setAuth(false);
 	};
 
-	const apiUrl = `${config.backendBaseUrl}/userAuth/check-auth`;
+	const apiUrl = `https://mern-app-cv74.onrender.com/userAuth/check-auth`;
 
 	const getAuthData = async () => {
 		const response = await axios.get(apiUrl, {

@@ -1,4 +1,4 @@
-import config from '../config';
+// import config from '../config';
 import React from 'react'
 import '../styles/projecTable.css'
 import axios from 'axios';
@@ -13,7 +13,7 @@ const ProjectTable = ({ list, setEditingWorkItem }) => {
 		const date = new Date(dateInfo);
 		return `${monthsInfo[date.getMonth()]}-${date.getDate()}, ${date.getFullYear()}`;
 	}
-	const apiUrl = `${config.backendBaseUrl}/projectDetails/editProject/${id}`;
+	const apiUrl = `https://mern-app-cv74.onrender.com/projectDetails/editProject/${id}`;
 	  const handleProjectEdit = async(text, id) => {
 	    try{
 	      let res = await axios.patch(apiUrl, {status: text});

@@ -1,4 +1,4 @@
-import config from '../../config';
+// import config from '../../config';
 import React, { useEffect, useState } from 'react';
 import Charts from '../../components/Charts';
 import axios from 'axios';
@@ -8,7 +8,7 @@ import HeadTop from '../../Pages/utility/Heading';
 
 const DashBoard = () => {
 	const [counter, setCounter] = useState({});
-    const apiUrl = `${config.backendBaseUrl}/counterData/getCounterInfo`;
+    const apiUrl = `https://mern-app-cv74.onrender.com/counterData/getCounterInfo`;
 	  const getCount = async() => {
 	    try{
 	      let res = await axios.get(apiUrl);

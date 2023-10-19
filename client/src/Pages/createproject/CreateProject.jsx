@@ -1,4 +1,4 @@
-import config from '../../config';
+// import config from '../../config';
 import React, { useState } from 'react';
 import Navbar from '../../components/NavBar';
 import Logo from "../../assets/Logo.svg";
@@ -36,7 +36,7 @@ const ProjectForm = () => {
 		}
 		setErrors({ ...tempErrors });
 	}
-	const apiUrl = `${config.backendBaseUrl}/projectDetails/createProject`;
+	const apiUrl = `https://mern-app-cv74.onrender.com/projectDetails/createProject`;
 	const registerProject = async (data) => {
 		try {
 			let res = await axios.post(apiUrl, data);

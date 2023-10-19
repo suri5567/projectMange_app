@@ -1,4 +1,4 @@
-import config from '../../config';
+// import config from '../../config';
 import logo from "../../assets/Logo.svg";
 import React, { useEffect, useState } from 'react';
 import "../../styles/listOfProjects.css";
@@ -26,7 +26,7 @@ const ProjectList = () => {
 	  loadProjects();
 	}, [currentPage, sortingOption, searchTerm, editingWorkItem]);
 
-	const apiUrl = `${config.backendBaseUrl}/projectDetails/getAllData?page=${currentPage}&limit=10&sort=${sortingOption}&searchTerm=${searchTerm}`;
+	const apiUrl = `https://mern-app-cv74.onrender.com/projectDetails/getAllData?page=${currentPage}&limit=10&sort=${sortingOption}&searchTerm=${searchTerm}`;
 	
 	const loadProjects = async() => {
 		try{

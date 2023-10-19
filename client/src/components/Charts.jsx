@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import HighchartsOfficial from 'highcharts-react-official';
 import Highcharts from 'highcharts';
-import config from '../config';
+// import config from '../config';
 
 const Charts = () => {
   const [departmentInfo, setDepartmentInfo] = useState({});
-  const apiUrl = `${config.backendBaseUrl}/projectDetails/departmentInfo`;
+  const apiUrl = `https://mern-app-cv74.onrender.com/projectDetails/departmentInfo`;
   const getDepartmentWiseData = async() => {
     try{
       let res = await axios.get(apiUrl);

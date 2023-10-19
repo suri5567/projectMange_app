@@ -1,4 +1,4 @@
-import config from '../../config';
+// import config from '../../config';
 import React, { useState, useContext } from 'react';
 import imageLogo from '../../assets/Logo.svg';
 import '../../styles/LoginPage.css';
@@ -17,11 +17,9 @@ function Login() {
 
 	async function handleLogin({ email, password }) {
 		try {
-			const response = await axios.post(`${config.backendBaseUrl}/userAuth/login`, {
+			const response = await axios.post(`https://mern-app-cv74.onrender.com/userAuth/login`, {
 				email,
 				password
-			}, {
-				withCredentials: true
 			});
 
 			console.log("why", response.msg);
