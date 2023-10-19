@@ -20,7 +20,7 @@ function Login() {
 			const response = await axios.post(`https://mern-app-cv74.onrender.com/userAuth/login`, {
 				email,
 				password
-			},  { withCredentials: true });
+			});
 
 			console.log("why", response.msg);
 	
