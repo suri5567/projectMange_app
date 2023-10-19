@@ -1,7 +1,7 @@
 // import config from '../../config';
 import React, { useState, useContext } from 'react';
 import imageLogo from '../../assets/Logo.svg';
-import '../../styles/LoginPage.css';
+import '../../styles/loginPage.css';
 import { ContextApi } from '../../contextApi';
 import axios from 'axios';
 
