@@ -1,3 +1,4 @@
+import config from '../config';
 import React from 'react'
 import '../styles/projecTable.css'
 import axios from 'axios';
@@ -12,10 +13,10 @@ const ProjectTable = ({ list, setEditingWorkItem }) => {
 		const date = new Date(dateInfo);
 		return `${monthsInfo[date.getMonth()]}-${date.getDate()}, ${date.getFullYear()}`;
 	}
-
+	const apiUrl = `${config.backendBaseUrl}/projectDetails/editProject/${id}`;
 	  const handleProjectEdit = async(text, id) => {
 	    try{
-	      let res = await axios.patch(`http://localhost:8080/projectDetails/editProject/${id}`, {status: text});
+	      let res = await axios.patch(apiUrl, {status: text});
 	      setEditingWorkItem(Math.random(2))
 	    }catch(err){
 	      console.log(err)

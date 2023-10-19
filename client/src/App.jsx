@@ -1,4 +1,4 @@
-
+import config from './config';
 import { useState, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
@@ -19,12 +19,13 @@ function App() {
 		setAuth(false);
 	};
 
-
+	const apiUrl = `${config.backendBaseUrl}/userAuth/check-auth`;
 
 	const getAuthData = async () => {
-		const response = await axios.get('http://localhost:8080/userAuth/check-auth', {
+		const response = await axios.get(apiUrl, {
 			withCredentials: true
-		  })
+		  });
+		  
 		console.log("response", response);
 		try {
 			if (response?.status == 200) {

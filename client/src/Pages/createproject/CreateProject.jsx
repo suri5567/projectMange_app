@@ -1,4 +1,4 @@
-
+import config from '../../config';
 import React, { useState } from 'react';
 import Navbar from '../../components/NavBar';
 import Logo from "../../assets/Logo.svg";
@@ -36,10 +36,10 @@ const ProjectForm = () => {
 		}
 		setErrors({ ...tempErrors });
 	}
-
+	const apiUrl = `${config.backendBaseUrl}/projectDetails/createProject`;
 	const registerProject = async (data) => {
 		try {
-			let res = await axios.post(`http://localhost:8080/projectDetails/createProject`, data);
+			let res = await axios.post(apiUrl, data);
 				alert("Project details added successfully!!!");
 		} catch (error) {
 			console.log(error.message)

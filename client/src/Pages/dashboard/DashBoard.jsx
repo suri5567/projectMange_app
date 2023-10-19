@@ -1,3 +1,4 @@
+import config from '../../config';
 import React, { useEffect, useState } from 'react';
 import Charts from '../../components/Charts';
 import axios from 'axios';
@@ -7,10 +8,10 @@ import HeadTop from '../../Pages/utility/Heading';
 
 const DashBoard = () => {
 	const [counter, setCounter] = useState({});
-
+    const apiUrl = `${config.backendBaseUrl}/counterData/getCounterInfo`;
 	  const getCount = async() => {
 	    try{
-	      let res = await axios.get(`http://localhost:8080/counterData/getCounterInfo`);
+	      let res = await axios.get(apiUrl);
 	      setCounter(res.data);
 	    }catch(err){
 	      console.log(err)

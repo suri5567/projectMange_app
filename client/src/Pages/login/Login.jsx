@@ -1,3 +1,4 @@
+import config from '../../config';
 import React, { useState, useContext } from 'react';
 import imageLogo from '../../assets/Logo.svg';
 import '../../styles/LoginPage.css';
@@ -16,7 +17,7 @@ function Login() {
 
 	async function handleLogin({ email, password }) {
 		try {
-			const response = await axios.post('http://localhost:8080/userAuth/login', {
+			const response = await axios.post(`${config.backendBaseUrl}/userAuth/login`, {
 				email,
 				password
 			}, {
