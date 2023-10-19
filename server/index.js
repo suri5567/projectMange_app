@@ -12,11 +12,7 @@ import getCounterValue from './routes/counterInfo.js'
 dotenv.config();
 const app = express();
 
-app.use(cors({
-	origin: ['http://localhost:5173', 'https://6530f45a20bf3d00a2575042--stately-maamoul-c108a0.netlify.app/'],
-	methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-	credentials: true,
-}));
+app.use(cors());
 app.use(cookieParser()); 
 const PORT = process.env.PORT1 || 5500;
 app.use(express.json())
