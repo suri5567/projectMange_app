@@ -26,7 +26,7 @@ const ProjectList = () => {
 	  loadProjects();
 	}, [currentPage, sortingOption, searchTerm, editingWorkItem]);
 
-	const apiUrl = `https://mern-app-cv74.onrender.com/projectDetails/getAllData?page=${currentPage}&limit=10&sort=${sortingOption}&searchTerm=${searchTerm}`;
+	const apiUrl = `https://mern-app-cv74.onrender.com/projectDetails/getAllData?page=${currentPage}&limit=5&sort=${sortingOption}&searchTerm=${searchTerm}`;
 	
 	const loadProjects = async() => {
 		try{
