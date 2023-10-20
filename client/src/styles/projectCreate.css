@@ -2,7 +2,6 @@
 	cursor: pointer;
 }
 
-
 .form-option {
 	display: grid;
 	width: 100%;
@@ -11,8 +10,8 @@
 }
 
 .outerDiv {
-	padding-left: 25px;
-	height: 85%;
+	/* padding-left: 25px; */
+	/* height: 85%; */
 }
 
 .dashboard-main form .submit-form-btn {

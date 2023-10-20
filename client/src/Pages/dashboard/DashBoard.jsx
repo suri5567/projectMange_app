@@ -26,7 +26,7 @@ const DashBoard = () => {
 		<div className='d-flex dashboard'>
 			<Navbar />
 			<div className='dashboard-main'>
-				<HeadTop title={"Dashboard"} />
+				<HeadTop title={"Dashboard"}/>
 				<div className='d-flex justify-content-between gap-4 statusInfo' >
 					<div className="cardInfo shadow-sm p-3 pt-2 bg-white rounded ">
 						<p>Total Projects</p>
@@ -50,7 +50,7 @@ const DashBoard = () => {
 					</div>
 				</div>
 				<div className='chartInfo'>
-					<h5 className='mb-4 mt-4' style={{fontSize:"15px", marginLeft:"50px", marginTop:"15px"}}>Department Wise-Total vs Closed</h5>
+					<h5 className='mb-4 mt-4' style={{fontSize:"18px", marginLeft:"50px", marginTop:"15px"}}>Department Wise-Total vs Closed</h5>
 					<Charts />
 				</div>
 			</div>

@@ -15,8 +15,9 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 10px; /* Adjust the gap as needed */
-	margin-bottom: 190px;
+	gap: 32px; 
+	margin-bottom: 39px;
+	margin-top: 251px;
   }
   
   .sidePanel .childContainer .createProjectInfo {
@@ -29,14 +30,17 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: end;
+	height:168px;
   }
   
-  /* Additional styles for responsive design */
+
   @media (max-width: 768px) {
 	.sidePanel {
 	  width: 100%;
 	  flex-direction: row;
 	  background-color: white;
+	  /* margin-top: 0 !important; */
+	  /* height: auto !important; */
 	}
   
 	.mainDiv .demo {
@@ -51,6 +55,11 @@
 	  flex-grow: 1;
 	  gap: 10px; /* Adjust the gap as needed */
 	  margin-right: 0px;
+	  margin-top:0px;
+	}
+
+	.sidePanel{
+		/* margin-top:0 !important; */
 	}
   
 	.sidePanel .childContainer .createProjectInfo {

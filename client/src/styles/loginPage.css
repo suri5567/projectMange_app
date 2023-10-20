@@ -4,16 +4,28 @@
 	box-sizing: border-box;
 }
 
-.container {
+.input-error {
+	border: 1px solid red;
+  }
+
+  .input-group-text{
+	cursor: pointer;
+    padding: 21px;
+    height: 10px;
+  }
+  
+
+.logincontainer{
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background-repeat: no-repeat;
 	min-height: 400px; 
-	 background-image: url('../assets/login-bg-1.svg');
+	background-image: url('../assets/login-bg-1.svg');
 	background-size: cover;
 	background-position: right bottom;
-	border-radius: 0 0 10px 0;
+	border-radius: 0 0 10px 0 !important;
+	/* border: 1px solid black; */
 } 
 
 .content {
@@ -23,18 +35,18 @@
 	flex-direction: column;
 }
 
-.container .image img {
+.image img {
 	width: 85px;
 }
 
-.container h1 {
+.logincontainer h1 {
 	color: white;
 	font-size: 16px;
 	margin: 20px 0px 25px 20px;
 }
 
 
-.container .titleBox {
+.titleBox {
 	position: absolute;
 	top: 170px;
 	width: 410px;
@@ -72,14 +84,13 @@
 
 
 .form1 .passwordbox {
-	font-weight: 500;
-	margin-top: 5px;
-	text-align: right;
-	cursor: pointer;
-	color: #0e6ac0;
-	font-size: 13px;
+    font-weight: 500;
+    margin-top: -7px;
+    text-align: right;
+    cursor: pointer;
+    color: #0e6ac0;
+    font-size: 13px;
 }
-
 
 .formBox {
 	margin-top: 35px;
@@ -99,7 +110,7 @@
 	background-color: #024f9b;
 }
 
-/* Add this CSS to your styles.css or equivalent stylesheet */
+
 .password-input-group {
 	display: flex;
 	align-items: center;
@@ -107,36 +118,34 @@
   
   .password-input-group input {
 	flex: 1;
-	padding-right: 30px; /* Adjust the value to control the spacing between the input and icon */
+	padding-right: 30px; 
   }
   
   .password-toggle {
 	cursor: pointer;
 	position: absolute;
-	right: 10px; /* Adjust the value to control the horizontal positioning */
-	top: 50%; /* Adjust the value to vertically center the icon */
-	transform: translateY(-50%); /* Vertically center the icon */
+	right: 10px; 
+	top: 50%; 
+	transform: translateY(-50%); 
   }
   
 
 @media (max-width: 581px) {
-	.container{
+	.logincontainer{
 	  margin: 0;
-	  width: 100%;
-	  height: 50vh;
 	  background-image: url('../assets/login-bg-1.svg');
-	  background-size: auto 50%;
-	  background-repeat: no-repeat;
-	  background-position: -30px 0;
+	  background-size:cover;
 	}
   
-	.container .image img{
+	.image img{
 	  width: 85px;
 	}
   
-	.container .titleBox{
+	.titleBox{
 	  width: 100%;
 	  height: 100%;
 	  border-radius: 0px;
 	}
   }
+
+  

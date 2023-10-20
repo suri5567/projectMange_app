@@ -1,5 +1,6 @@
 
 import Table from 'react-bootstrap/Table';
+import axios from 'axios';
 
 const ProjectTable = ({ list, setEditingWorkItem }) => {
 	
@@ -22,8 +23,9 @@ const ProjectTable = ({ list, setEditingWorkItem }) => {
 		  }
   return (
     <div className='p-lg-3 p-md-3 p-sm-1'>
+		{list ? ( 
       <Table responsive="sm">
-        <thead>
+        <thead className='table-info'>
           <tr>
 		  	<th style={{whiteSpace:"nowrap"}}>Project Name</th>
 			<th>Reason</th>
@@ -34,6 +36,7 @@ const ProjectTable = ({ list, setEditingWorkItem }) => {
 			<th>Dept</th>
 			<th>Location</th>
 			<th>Status</th>
+			<th></th>
           </tr>
         </thead>
         <tbody>
@@ -41,7 +44,7 @@ const ProjectTable = ({ list, setEditingWorkItem }) => {
 			list?.map((item) => (
 				<tr key={item._id}> 
 						<td>
-							<p>{item?.projectInfo}</p>
+							<p style={{fontWeight:"bold"}}>{item?.projectInfo}</p>
 							<p>{changeTimeDate(item?.startDate)} to {changeTimeDate(item?.endDate)}</p>
 						</td>
 						<td>{item?.reason}</td>
@@ -51,12 +54,12 @@ const ProjectTable = ({ list, setEditingWorkItem }) => {
 						<td>{item?.priority}</td>
 						<td>{item?.department}</td>
 						<td>{item?.location}</td>
-						<td id="bold">{item?.status}</td>
+						<td id="bold"><b>{item?.status}</b></td>
 						<td>
 							<div className='d-flex gap-3'>
-								<button className='btn btn-primary rounded-pill' id="btn1" onClick={() => handleProjectEdit("Running....", item._id)}>Start</button>
-								<button className='btn btn-outline-primary outlined rounded-pill' id="btn2" onClick={() => handleProjectEdit("Closed", item._id)}>Close</button>
-								<button className='btn btn-danger rounded-pill' id="btn3" onClick={() => handleProjectEdit("Cancelled", item._id)}>Cancel</button>
+								<button className='btn btn-primary rounded-pill ps-4 pe-4' id="btn1" onClick={() => handleProjectEdit("Running....", item._id)}>Start</button>
+								<button className='btn btn-outline-primary outlined rounded-pill ps-4 pe-4' id="btn2" onClick={() => handleProjectEdit("Closed", item._id)}>Close</button>
+								<button className='btn btn-outline-primary outlined rounded-pill ps-4 pe-4' id="btn3" onClick={() => handleProjectEdit("Cancelled", item._id)}>Cancel</button>
 							</div>
 						</td>
 				</tr>
@@ -64,6 +67,7 @@ const ProjectTable = ({ list, setEditingWorkItem }) => {
 		}
         </tbody>
       </Table>
+		):<div style={{fontSize:"20px", fontWeight:"bold"}}>Loading data please wait.....</div>}
     </div>
   );
 }

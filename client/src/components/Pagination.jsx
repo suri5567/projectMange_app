@@ -12,7 +12,7 @@ const HandlePagination = ({handlePage,  totalPages = 0, active = 0 }) => {
       <button className='btn1' onClick={() => handlePage(1)} disabled={active===1}>
         <AiOutlineDoubleLeft fontSize={"15px"}/>
       </button>
-      <button  lassName='btn2'  onClick={() => handlePage(active-1)} disabled={active===1}>
+      <button  className='btn2'  onClick={() => handlePage(active-1)} disabled={active===1}>
         <AiOutlineLeft fontSize={"15px"}/>
       </button>
       {pageNumbers.map(page => (

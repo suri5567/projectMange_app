@@ -47,7 +47,7 @@ const Navbar = () => {
 				</div>
 			</div>
 			<div className="logoutInfo">
-				<img src={logoutIcon} alt='' onClick={() => logoutUser()} style={{ paddingTop: "28px" }} />
+				<img src={logoutIcon} alt='' onClick={() => logoutUser()} style={{ paddingTop: "28px", color:"white" }} />
 			</div>
 		</div>
 	)

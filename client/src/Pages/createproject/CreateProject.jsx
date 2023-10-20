@@ -97,7 +97,7 @@ const ProjectForm = () => {
 			<Navbar />
 			<div className='dashboard-main'>
 				<HeadingTop iconSvg={<p className={"fa fa-fw fa-chevron-left field-icon-alt"}></p>} active={active} title={"Create Project"} />
-				<div className="outerDiv">
+				<div className="outerDiv p-3">
 					<div className="submitDiv shadow-lg bg-white rounded-2 pb-4">
 						<form onSubmit={handleSubmit}>
 							<div className='d-flex justify-content-between p-4 align-items-start'>

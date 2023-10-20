@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import HighchartsOfficial from 'highcharts-react-official';
 import Highcharts from 'highcharts';
-// import config from '../config';
+
 
 const Charts = () => {
   const [departmentInfo, setDepartmentInfo] = useState({});
@@ -111,7 +111,7 @@ const Charts = () => {
             containerProps={{ style: { height: '400px' } }}
           />
         ) : (
-          <div>please wait...</div>
+          <div style={{fontSize:"20", fontWeight:"bold"}}>Please wait...</div>
         )}
       </div>
     </div>
