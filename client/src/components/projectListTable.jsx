@@ -13,10 +13,10 @@ const ProjectTable = ({ list, setEditingWorkItem }) => {
 		const date = new Date(dateInfo);
 		return `${monthsInfo[date.getMonth()]}-${date.getDate()}, ${date.getFullYear()}`;
 	}
-	const apiUrl = `https://mern-app-cv74.onrender.com/projectDetails/editProject/${id}`;
+	
 	  const handleProjectEdit = async(text, id) => {
 	    try{
-	      let res = await axios.patch(apiUrl, {status: text});
+	      let res = await axios.patch(`https://mern-app-cv74.onrender.com/projectDetails/editProject/${id}`, {status: text});
 	      setEditingWorkItem(Math.random(2))
 	    }catch(err){
 	      console.log(err)

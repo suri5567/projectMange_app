@@ -44,7 +44,8 @@ const ProjectList = () => {
 				<HeadTop iconImg={<span className={"fa fa-fw fa-chevron-left field-icon"}></span>} active={active} title={"Project Lists"} />
 				<div className='tableContainer1'>
 					<div className="tableContainer2">
-						<div className='d-flex justify-content-between functionality-menu'>
+
+						 <div className='d-flex justify-content-between functionality-menu'>
 							<div className="d-flex justify-content-start align-items-center search1">
 								<span className="fa fa-search search-icon"></span>
 								<input type="text" className="form-control search" placeholder="Search something ..." onChange={handleSearch} />
@@ -61,7 +62,7 @@ const ProjectList = () => {
 									<option value="category">category</option>
 								</select>
 							</div>
-						</div>
+						</div> 
 						<Table list={list?.projects} setEditingWorkItem={setEditingWorkItem} />
 					</div>
 					<div className='handlePage'>

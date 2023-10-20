@@ -1,4 +1,4 @@
-// import config from '../../config';
+import '../../styles/dashBoardPage.css'
 import React, { useState } from 'react';
 import Navbar from '../../components/NavBar';
 import Logo from "../../assets/Logo.svg";
@@ -8,6 +8,7 @@ import HeadingTop from '../utility/Heading';
 
 const ProjectForm = () => {
 	const [formData, setFormData] = useState({projectInfo: "", department: "Strategy", division: "Compressor", category: "Quality A", location: "Pune", priority: "High", reason: "Business", type: "Internal", endDate: '', startDate: '' });
+	const [submitError, setSubmitError] = useState("");
 	const [errors, setErrors] = useState({
 		projectInfo: "",
 		start: "",
@@ -40,7 +41,8 @@ const ProjectForm = () => {
 	const registerProject = async (data) => {
 		try {
 			let res = await axios.post(apiUrl, data);
-				alert("Project details added successfully!!!");
+				// alert("Project details added successfully!!!");
+				setSubmitError({msg:"Project Added successfully !!!"})
 		} catch (error) {
 			console.log(error.message)
 		}
@@ -88,11 +90,10 @@ const ProjectForm = () => {
 		  setErrors({ ...errors, end: '' });
 		}
 	  }
-	  
-	  
+	
 
 	return (
-		<div className='dashboard d-flex '>
+		<div className='dashboard'>
 			<Navbar />
 			<div className='dashboard-main'>
 				<HeadingTop iconSvg={<p className={"fa fa-fw fa-chevron-left field-icon-alt"}></p>} active={active} title={"Create Project"} />
@@ -159,10 +160,7 @@ const ProjectForm = () => {
 									<p className='form-option-title'>Department:</p>
 									<select onChange={updateFormData} name='department' defaultValue={'Strategy'}>
 										<option value="Strategy">Strategy</option>
-										<option value="Production">Production</option>
 										<option value="Quality">Quality</option>
-										<option value="Maintenance">Maintenance</option>
-										<option value="Paint shop">Paint shop</option>
 										<option value="Finance">Finance</option>
 										<option value="PPC">PPC</option>
 									</select>
@@ -195,6 +193,7 @@ const ProjectForm = () => {
 							<div className='d-flex justify-content-end status-option'>
 								<span>Status: <h6>Registered</h6></span>
 							</div>
+							{submitError?.msg && <p style={{ color: 'red', fontSize: "20px", marginLeft:"35%", fontWeight:'bold' }}>{submitError.msg}</p>}
 							<button className='submit-form-btn-2' type='submit'>Save Project</button>
 						</form>
 					</div>
