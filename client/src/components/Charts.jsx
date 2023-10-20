@@ -111,7 +111,7 @@ const Charts = () => {
             containerProps={{ style: { height: '400px' } }}
           />
         ) : (
-          <div>Loading chart please wait...</div>
+          <div>please wait...</div>
         )}
       </div>
     </div>

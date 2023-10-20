@@ -1,4 +1,4 @@
-// import config from '../../config';
+
 import logo from "../../assets/Logo.svg";
 import React, { useEffect, useState } from 'react';
 import "../../styles/listOfProjects.css";

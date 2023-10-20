@@ -10,7 +10,7 @@
     margin: 0;
     padding: 0;
 	background-image: url('../assets/login-bg-1.svg');
-    background-size: auto 85%; 
+    background-size: auto; 
     background-repeat: no-repeat;
     background-color: #F2F4F7;
     background-position-y: -346px;

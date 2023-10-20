@@ -1,4 +1,4 @@
-// import config from './config';
+
 import { useState, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
@@ -7,7 +7,7 @@ import CreateProject from './Pages/createproject/CreateProject';
 import Login from './Pages/login/Login';
 import { ContextApi } from './contextApi';
 import ProjectList from './Pages/projectlist/ProjectList';
-import axios from 'axios';
+// import axios from 'axios';
 
 function App() {
 	const [auth, setAuth] = useState(false);
@@ -19,29 +19,29 @@ function App() {
 		setAuth(false);
 	};
 
-	const apiUrl = `https://mern-app-cv74.onrender.com/userAuth/check-auth`;
+	// const apiUrl = `https://mern-app-cv74.onrender.com/userAuth/check-auth`;
 
-	const getAuthData = async () => {
-		const response = await axios.get(apiUrl, {
-			withCredentials: true
-		  });
-		  
-		console.log("response", response);
-		try {
-			if (response?.status == 200) {
-				login();
-			} else {
-				logout();
-			}
-		}
-		catch (error) {
-			console.error('Error checking authentication:', error);
-		};
-	}
+	// const getAuthData = async () => {
+	// 	const response = await axios.get(apiUrl, {
+	// 		withCredentials: true
+	// 	  });
 
-	useEffect(() => {
-		getAuthData();
-	}, []);
+	// 	console.log("response", response);
+	// 	try {
+	// 		if (response?.status == 200) {
+	// 			login();
+	// 		} else {
+	// 			logout();
+	// 		}
+	// 	}
+	// 	catch (error) {
+	// 		console.error('Error checking authentication:', error);
+	// 	};
+	// }
+
+	// useEffect(() => {
+	// 	getAuthData();
+	// }, []);
 
 
 

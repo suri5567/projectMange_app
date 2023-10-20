@@ -50,7 +50,7 @@ const DashBoard = () => {
 					</div>
 				</div>
 				<div className='chartInfo'>
-					<h5 className='mb-4 mt-4' style={{color:"white",fontSize:"15px", marginLeft:"50px", marginTop:"15px"}}>Department Wise-Total vs Closed</h5>
+					<h5 className='mb-4 mt-4' style={{fontSize:"15px", marginLeft:"50px", marginTop:"15px"}}>Department Wise-Total vs Closed</h5>
 					<Charts />
 				</div>
 			</div>
