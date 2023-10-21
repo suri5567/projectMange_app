@@ -23,7 +23,7 @@ const HandlePagination = ({handlePage,  totalPages = 0, active = 0 }) => {
       <button className="btn4"  onClick={() => handlePage(active+1)} disabled={active===totalPages}>
       <AiOutlineRight fontSize={"15px"}/>
       </button>
-      <button classname="btn5" onClick={() => handlePage(totalPages)} disabled={active===totalPages}>
+      <button className="btn5" onClick={() => handlePage(totalPages)} disabled={active===totalPages}>
         <AiOutlineDoubleRight fontSize={"15px"}/>
       </button>
     </div>

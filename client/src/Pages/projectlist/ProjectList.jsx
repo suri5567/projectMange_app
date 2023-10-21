@@ -26,7 +26,7 @@ const ProjectList = () => {
 	  loadProjects();
 	}, [currentPage, sortingOption, searchTerm, editingWorkItem]);
 
-	const apiUrl = `https://mern-app-cv74.onrender.com/projectDetails/getAllData?page=${currentPage}&limit=4&sort=${sortingOption}&searchTerm=${searchTerm}`;
+	const apiUrl = `https://mern-app-cv74.onrender.com/projectDetails/getAllData?page=${currentPage}&limit=5&sort=${sortingOption}&searchTerm=${searchTerm}`;
 	
 	const loadProjects = async() => {
 		try{
@@ -65,7 +65,7 @@ const ProjectList = () => {
 						</div> 
 						<Table list={list?.projects} setEditingWorkItem={setEditingWorkItem} />
 					</div>
-					<div className='handlePage'>
+					<div className='handlepage'>
 						<HandlePagination totalPages={list?.totalPages} active={currentPage} handlePage={setCurrentPage} />
 					</div>
 				</div>
