@@ -19,6 +19,7 @@ const ProjectTable = ({ list, setEditingWorkItem }) => {
 	const handleProjectEdit = async (text, id) => {
 		try {
 			let res = await axios.patch(`https://mern-app-cv74.onrender.com/projectDetails/editProject/${id}`, { status: text });
+			console.log("res", res)
 			setEditingWorkItem(Math.random(2));
 		} catch (err) {
 			console.log(err);
@@ -85,8 +86,8 @@ const ProjectTable = ({ list, setEditingWorkItem }) => {
 						<Td style={{ padding: "15px", margin: "8px" }}>{item?.location}</Td>
 						<Td style={{ padding: "15px", margin: "8px" }} fontWeight={"bold"}>{item?.status}</Td>
 						<Td style={{ padding: "8px", margin: "8px" }} display={"flex"} gap={5}>
-						<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-						  <div class="btn-group me-2" role="group" aria-label="First group">
+						<div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+						  <div className="btn-group me-2" role="group" aria-label="First group">
 						  <Button
 							size={"sm"}
 							borderRadius={20}
@@ -97,12 +98,12 @@ const ProjectTable = ({ list, setEditingWorkItem }) => {
 							w={"80px"}
 							p={2}
 							_hover={{ bg: 'blue.500' }}
-							onClick={() => setEditingWorkItem("Running", item?._id)}
+							onClick={() => handleProjectEdit("Running", item?._id)}
 						  >
 							Start
 						  </Button>
 						  </div>
-						  <div class="btn-group me-2" role="group" aria-label="First group">
+						  <div className="btn-group me-2" role="group" aria-label="First group">
 						  <Button
 							size={"sm"}
 							borderRadius={20}
@@ -113,12 +114,12 @@ const ProjectTable = ({ list, setEditingWorkItem }) => {
 							fontWeight={400}
 							variant={"outline"}
 							_hover={{ bg: 'blue.500' }}
-							onClick={() => setEditingWorkItem("Closed", item._id)}
+							onClick={() => handleProjectEdit("Closed", item._id)}
 						  >
 							Close
 						  </Button>
 						  </div>
-						  <div class="btn-group me-2" role="group" aria-label="First group">
+						  <div className="btn-group me-2" role="group" aria-label="First group">
 						  <Button
 							size={"sm"}
 							borderRadius={20}
@@ -128,7 +129,7 @@ const ProjectTable = ({ list, setEditingWorkItem }) => {
 							w={"80px"}
 							variant={"outline"}
 							_hover={{ bg: 'blue.500' }}
-							onClick={() => setEditingWorkItem("Cancelled", item._id)}
+							onClick={() => handleProjectEdit("Cancelled", item._id)}
 							className="btn btn-outline-primary rounded-pill ps-4 pe-4"
 						  >
 							Cancel

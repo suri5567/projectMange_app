@@ -2,6 +2,7 @@
 import React from "react";
 import '../styles/projectCard.css'
 import { Box, Text, Button, Heading } from "@chakra-ui/react";
+import axios from 'axios';
 
 
 
@@ -20,8 +21,20 @@ const ProjectCard = ({
 	setEditingWorkItem,
 	id,
 }) => {
+
+	const handleProjectEdit = async (text, id) => {
+		try {
+			let res = await axios.patch(`https://mern-app-cv74.onrender.com/projectDetails/editProject/${id}`, { status: text });
+			console.log("res", res)
+			setEditingWorkItem(Math.random(2));
+		} catch (err) {
+			console.log(err);
+			alert("Internal server error!!!");
+		}
+	}
+
 	return (
-		<Box border="1px solid lightgray cardtable" backgroundColor={"white"} borderRadius="15px" borderColor="gray" p={5} marginTop={"20px"} style={{ boxShadow: "0px 5px 5px  lightgray" }}>
+		<Box border="1px solid lightgray cardtable" backgroundColor={"white"} borderRadius="15px" borderColor="gray" p={5} marginTop={"20px"} style={{ boxShadow: "0px 5px 5px  lightgray", padding:"16px" }}>
 			<div className="d-flex justify-content-between">
 				<Heading fontSize="lg" fontWeight="600" color="gray.700">
 					{projectInfo}
@@ -60,8 +73,8 @@ const ProjectCard = ({
 				<span style={{ color: "#808080" }}>Priority: <span className="topisc">{Priority}</span></span>
 			</Text>
 			<Box mt={4}>
-				<div class="btn-toolbar ms-3 flex-nowrap" role="toolbar" aria-label="Toolbar with button groups">
-					<div class="btn-group me-2 " role="group" aria-label="First group">
+				<div className="btn-toolbar ms-3 flex-nowrap" role="toolbar" aria-label="Toolbar with button groups">
+					<div className="btn-group me-2 " role="group" aria-label="First group">
 						<Button
 							size="sm"
 							borderRadius="md"
@@ -70,12 +83,12 @@ const ProjectCard = ({
 							className="btn btn-primary rounded-pill ps-4 pe-4"
 							fontWeight={400}
 							w="100%"
-							onClick={() => setEditingWorkItem("Running", id)}
+							onClick={() => handleProjectEdit("Running", id)}
 						>
 							Start
 						</Button>
 					</div>
-					<div class="btn-group me-2" role="group" aria-label="First group">
+					<div className="btn-group me-2" role="group" aria-label="First group">
 						<Button
 							size="sm"
 							borderRadius="md"
@@ -85,12 +98,12 @@ const ProjectCard = ({
 							fontWeight={400}
 
 							w="100%"
-							onClick={() => setEditingWorkItem("Closed", id)}
+							onClick={() => handleProjectEdit("Closed", id)}
 						>
 							Close
 						</Button>
 					</div>
-					<div class="btn-group me-2" role="group" aria-label="First group">
+					<div className="btn-group me-2" role="group" aria-label="First group">
 						<Button
 							size="sm"
 							className="btn btn-outline-primary rounded-pill ps-4 pe-4"
@@ -100,7 +113,7 @@ const ProjectCard = ({
 							fontWeight={400}
 
 							w="100%"
-							onClick={() => setEditingWorkItem("Cancelled", id)}
+							onClick={() => handleProjectEdit("Cancelled", id)}
 						>
 							Cancel
 						</Button>

@@ -8,7 +8,7 @@ const HandlePagination = ({handlePage,  totalPages = 0, active = 0 }) => {
   const pageNumbers = [...Array(endPage - startPage + 1)].map((_, i) => startPage + i);
 
   return (
-    <div className='d-flex justify-content-center align-items-center gap-3' class="pageContainer">
+    <div className='d-flex justify-content-center align-items-center gap-3  pageContainer'>
       <button className='btn1' onClick={() => handlePage(1)} disabled={active===1}>
         <AiOutlineDoubleLeft fontSize={"15px"}/>
       </button>

@@ -122,8 +122,8 @@ function Login() {
 						<div className="d-flex justify-content-end">
 							<p className="passwordbox">Forgot password?</p>
 						</div>
-						<div class="d-grid gap-2 col-12 mx-auto ">
-							<button class="btn btn-primary" type="submit" style={{
+						<div className="d-grid gap-2 col-12 mx-auto ">
+							<button className="btn btn-primary" type="submit" style={{
 								borderRadius: '20px 20px 20px 20px',
 								
 							}}>Login</button>
