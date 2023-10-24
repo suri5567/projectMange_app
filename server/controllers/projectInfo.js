@@ -42,45 +42,81 @@ export const handleEditExitingProject = async (req, res) => {
 };
 
 
+// export const handleGetProjectList = async (req, res) => {
+// 	try {
+// 		const searchTerm = req.query.searchTerm || '';
+// 		const sort = req.query.sort || 'createdAt';
+// 		const query = {};
+// 		const page = parseInt(req.query.page) || 1;
+// 		const limit = parseInt(req.query.limit) || 5;
+
+// 		if (searchTerm) {
+// 			query.$or = [
+// 				{ projectTitle: { $regex: searchTerm, $options: 'i' } },
+// 				{ category: { $regex: searchTerm, $options: 'i' } },
+// 				{ division: { $regex: searchTerm, $options: 'i' } },
+// 				{ location: { $regex: searchTerm, $options: 'i' } },
+// 				{ department: { $regex: searchTerm, $options: 'i' } },
+// 				{ priority: { $regex: searchTerm, $options: 'i' } },
+// 				{ reason: { $regex: searchTerm, $options: 'i' } },
+// 				{ type: { $regex: searchTerm, $options: 'i' } },
+// 			];
+// 		}
+
+// 		const totalCount = await ProjectDetailschema.countDocuments(query);
+// 		const totalPages = Math.ceil(totalCount / limit);
+
+// 		const projects = await ProjectDetailschema.find(query)
+// 			.sort({ [sort]: 1 })
+// 			.skip((page - 1) * limit)
+// 			.limit(limit);
+
+// 		res.json({
+// 			totalCount,
+// 			projects,
+// 			totalPages,
+// 		});
+// 	} catch (error) {
+// 		console.error(err);
+// 		res.status(500).json({ message: 'Internal server error' });
+// 	}
+// };
+
 export const handleGetProjectList = async (req, res) => {
-	try {
-		const searchTerm = req.query.searchTerm || '';
-		const sort = req.query.sort || 'createdAt';
-		const query = {};
-		const page = parseInt(req.query.page) || 1;
-		const limit = parseInt(req.query.limit) || 5;
+	const sort = req.query.sort || 'createdAt';
+	const page = parseInt(req.query.page) || 1;
+	const limit = parseInt(req.query.limit) || 5;
 
-		if (searchTerm) {
-			query.$or = [
-				{ projectTitle: { $regex: searchTerm, $options: 'i' } },
-				{ category: { $regex: searchTerm, $options: 'i' } },
-				{ division: { $regex: searchTerm, $options: 'i' } },
-				{ location: { $regex: searchTerm, $options: 'i' } },
-				{ department: { $regex: searchTerm, $options: 'i' } },
-				{ priority: { $regex: searchTerm, $options: 'i' } },
-				{ reason: { $regex: searchTerm, $options: 'i' } },
-				{ type: { $regex: searchTerm, $options: 'i' } },
-			];
-		}
-
-		const totalCount = await ProjectDetailschema.countDocuments(query);
-		const totalPages = Math.ceil(totalCount / limit);
-
-		const projects = await ProjectDetailschema.find(query)
-			.sort({ [sort]: 1 })
+	const finalQuery = req.query.searchTerm.toLowerCase();
+	const regex = new RegExp(finalQuery, "i");
+	const query = {
+		$or: [
+			{ projectInfo: regex },
+			{ status: regex },
+			{ category: regex },
+			{ division: regex },
+			{ location: regex },
+			{ department: regex },
+			{ priority: regex },
+			{ reason: regex },
+			{ type: regex },
+		]
+	}
+	const totalCount = await ProjectDetailschema.countDocuments(query);
+	const totalPages = Math.ceil(totalCount / limit);
+	const projects = await ProjectDetailschema.find(query)
+	.sort({ [sort]: 1 })
 			.skip((page - 1) * limit)
 			.limit(limit);
-
+		console.log("projects", projects);
 		res.json({
 			totalCount,
 			projects,
 			totalPages,
 		});
-	} catch (error) {
-		console.error(err);
-		res.status(500).json({ message: 'Internal server error' });
-	}
+
 };
+
 
 
 export const departmentWiseInfo = async (req, res) => {
