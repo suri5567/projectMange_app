@@ -48,7 +48,7 @@ export const handleGetProjectList = async (req, res) => {
 		const sort = req.query.sort || 'createdAt';
 		const query = {};
 		const page = parseInt(req.query.page) || 1;
-		const limit = parseInt(req.query.limit) || 5;
+		const limit =  5;
 
 		if (searchTerm) {
 			query.$or = [
